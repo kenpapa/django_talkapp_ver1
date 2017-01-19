@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+メッセージ作成
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>メッセージ作成</h1>
+    <form action="{% url 'post_store' %}" method="post">
+      <div class="form-group">
+        <label for="Message">メッセージ</label>
+        <textarea class="form-control" name="message" id="Message" rows="5" placeholder="Your Post"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">送信</button>
+      {% csrf_token %}
+    </form>
+  </div>
+</div>
+{% endblock %}
